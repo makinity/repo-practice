@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input">
+    <button onclick="checkRes()">Check</button>
+    <p id="result"></p>
+
+    <button onclick="reset()">Reset</button>
+</body>
+<script>
+    let input = document.getElementById('input');
+    let result = document.getElementById('result');
+
+    let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+    function checkRes(){
+        let num = parseInt(input.value);
+
+        if(num === randomNumber){
+            result.textContent = "Correct! 🎉"
+        }
+        else if (num > randomNumber) {
+            result.textContent = "Too High!"
+        }
+        else if (num < randomNumber) {
+            result.textContent = "Too Low!"
+        }
+        else {
+            alert('error');
+        }
+    }
+
+    function reset(){
+        result.textContent = "";
+        input.value = null;
+    }
+</script>
+</html>
